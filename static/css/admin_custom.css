@@ -1,0 +1,64 @@
+/* Import professional font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+/* Apply font */
+body {
+    font-family: "Merriweather", serif;
+}
+
+/* Login page background image */
+.login-page {
+    background-image: url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Make login box slightly transparent */
+.login-box .card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+}
+
+/* Sidebar professional color */
+.main-sidebar {
+    background: #0f1f3d !important;
+}
+
+/* Sidebar links */
+.nav-sidebar .nav-link {
+    color: white !important;
+}
+
+.nav-sidebar .nav-link:hover {
+    background: #1f3a6b !important;
+}
+
+/* Top navbar */
+.main-header {
+    background: #0f1f3d !important;
+}
+
+/* Tables header */
+.table thead {
+    background: #0f1f3d;
+    color: white;
+}
+
+/* Adjust logo size
+.brand-image {
+    max-height: 24px !important;
+    width: auto !important;
+} */
+
+/* Fix logo size */
+.brand-link img {
+    height: 32px !important;
+    width: auto !important;
+}
+
+/* Align logo and text */
+.brand-link {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px !important;
+}
