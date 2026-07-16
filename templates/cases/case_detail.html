@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <h2>{{ case.title }}</h2>
+
+    <p><strong>Description:</strong> {{ case.description }}</p>
+    <p><strong>Client:</strong> {{ case.client }}</p>
+    <p><strong>Status:</strong> {{ case.status }}</p>
+
+    <hr>
+
+    <h3>Update Status</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <select name="status">
+            <option value="active">Active</option>
+            <option value="closed">Closed</option>
+        </select>
+
+        <button type="submit">Update</button>
+    </form>
+
+    <hr>
+
+    <h3>Add Note</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <textarea name="content" placeholder="Write case update..." style="height:100px;"></textarea>
+
+        <button type="submit">Add Note</button>
+    </form>
+
+    <hr>
+
+    <h3>Case Notes</h3>
+
+    {% for note in case.notes.all %}
+        <div class="card">
+            <p>{{ note.content }}</p>
+            <small>{{ note.created_at|date:"d M Y H:iAC" }}</small>
+        </div>
+    {% empty %}
+        <p>No notes yet</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

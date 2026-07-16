@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <h2>Client Requests</h2>
+
+    <div class="grid">
+
+        {% for req in requests %}
+        <div class="request-card">
+
+            <div class="card-header">
+                <h3>{{ req.title }}</h3>
+                <span class="status">{{ req.status }}</span>
+            </div>
+
+            <p class="desc">{{ req.description }}</p>
+
+            <div class="card-footer">
+                <small>Client: {{ req.client }}</small>
+
+                {% if req.status == "pending" %}
+                    <a href="{% url 'accept_request' req.id %}" class="btn primary">Accept</a>
+                {% else %}
+                    <span class="accepted">Accepted</span>
+                {% endif %}
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

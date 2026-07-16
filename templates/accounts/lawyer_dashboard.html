@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <h2>Lawyer Dashboard</h2>
+
+    <div class="card">
+        <p>Manage Clients</p>
+    </div>
+
+    <div class="card">
+        <p>View Cases</p>
+    </div>
+
+    <div class="card">
+        <p>Upload Documents</p>
+    </div>
+</div>
+<a href="/requests/lawyer/" class="btn primary">View Client Requests</a>
+<a href="/cases/lawyer-cases/" class="btn primary">View My Cases</a>
+{% endblock %}

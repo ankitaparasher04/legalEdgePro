@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <h2>My Assigned Cases</h2>
+
+    <div class="grid">
+
+        {% for case in cases %}
+        <div class="request-card">
+
+            <div class="card-header">
+                <h3>
+                    <a href="{% url 'case_detail' case.id %}" class="case-link">
+                        {{ case.title }}
+                    </a>
+                </h3>
+                <span class="status">{{ case.status }}</span>
+            </div>
+
+            <p class="desc">{{ case.description }}</p>
+
+            <div class="card-footer">
+                <small>Client: {{ case.client }}</small>
+                <small>Date: {{ case.created_at|date:"d M Y" }}</small>
+            </div>
+
+        </div>
+        {% empty %}
+            <p>No cases assigned yet</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

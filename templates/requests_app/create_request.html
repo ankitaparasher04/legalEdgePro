@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form-card">
+        <h2>Submit Legal Request</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="title" placeholder="Case Title">
+
+            <textarea name="description" placeholder="Describe your issue" style="height:100px;"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <h2>My Cases</h2>
+
+    <div class="grid">
+
+        {% for case in cases %}
+        <div class="request-card">
+
+            <div class="card-header">
+                <h3>{{ case.title }}</h3>
+                <span class="status">{{ case.status }}</span>
+            </div>
+
+            <p class="desc">{{ case.description }}</p>
+
+            <div class="card-footer">
+                <small>Lawyer: {{ case.lawyer }}</small>
+                <small>Date: {{ case.created_at }}</small>
+            </div>
+
+        </div>
+        {% empty %}
+            <p>No cases yet</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

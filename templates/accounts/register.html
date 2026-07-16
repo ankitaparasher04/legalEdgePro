@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form-card">
+        <h2>Create Account</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+
+            <select name="role">
+                <option value="lawyer">Lawyer</option>
+                <option value="client">Client</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
