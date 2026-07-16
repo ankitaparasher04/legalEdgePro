@@ -273,17 +273,11 @@ git push origin feature-name
 
 5. Open a Pull Request.
 
----
 
-## License
-
-This project is licensed under the MIT License.
-
----
 
 ## Author
 
 **Ankita Parasher**
 
-* GitHub: https://github.com/ankitaparasher04
-* LinkedIn: Add your LinkedIn profile here.
+* GitHub: https://github.com/ankitaparasher04/legalEdgePro
+
